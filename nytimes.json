@@ -1,0 +1,692 @@
+[{
+  "status": "OK",
+  "copyright": "Copyright (c) 2016 The New York Times Company. All Rights Reserved.",
+  "section": "technology",
+  "last_updated": "2016-05-31T17:45:14-04:00",
+  "num_results": 10,
+  "results": [
+    {
+      "section": "Business Day",
+      "subsection": "Media",
+      "title": "Music World Bands Together Against YouTube, Seeking Change to Law",
+      "abstract": "The industry has asked the government to modify the Digital Millennium Copyright Act, saying it is outdated and makes removing unauthorized content too difficult.",
+      "url": "http://www.nytimes.com/2016/06/01/business/media/music-world-bands-together-against-youtube-seeking-change-to-law.html",
+      "byline": "By BEN SISARIO",
+      "item_type": "Article",
+      "updated_date": "2016-05-31T15:16:07-04:00",
+      "created_date": "2016-05-31T15:16:09-04:00",
+      "published_date": "2016-06-01T00:00:00-04:00",
+      "material_type_facet": "",
+      "kicker": "",
+      "des_facet": [
+        "Audio Recordings, Downloads and Streaming",
+        "Copyrights and Copyright Violations",
+        "Royalties",
+        "Music"
+      ],
+      "org_facet": [
+        "YouTube.com",
+        "Google Inc",
+        "Spotify",
+        "Pandora Media Inc",
+        "SoundCloud"
+      ],
+      "per_facet": [],
+      "geo_facet": [],
+      "multimedia": [
+        {
+          "url": "https://static01.nyt.com/images/2016/05/31/business/31youtube2/31youtube2-thumbStandard.jpg",
+          "format": "Standard Thumbnail",
+          "height": 75,
+          "width": 75,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Stars like Pharrell Williams have signed letters asking for changes to copyright laws.",
+          "copyright": "Christopher Polk/Getty Images"
+        },
+        {
+          "url": "https://static01.nyt.com/images/2016/05/31/business/31youtube2/31youtube2-thumbLarge.jpg",
+          "format": "thumbLarge",
+          "height": 150,
+          "width": 150,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Stars like Pharrell Williams have signed letters asking for changes to copyright laws.",
+          "copyright": "Christopher Polk/Getty Images"
+        },
+        {
+          "url": "https://static01.nyt.com/images/2016/05/31/business/31youtube2/31youtube2-articleInline.jpg",
+          "format": "Normal",
+          "height": 149,
+          "width": 190,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Stars like Pharrell Williams have signed letters asking for changes to copyright laws.",
+          "copyright": "Christopher Polk/Getty Images"
+        },
+        {
+          "url": "https://static01.nyt.com/images/2016/05/31/business/31youtube2/31youtube2-mediumThreeByTwo210.jpg",
+          "format": "mediumThreeByTwo210",
+          "height": 140,
+          "width": 210,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Stars like Pharrell Williams have signed letters asking for changes to copyright laws.",
+          "copyright": "Christopher Polk/Getty Images"
+        },
+        {
+          "url": "https://static01.nyt.com/images/2016/05/31/business/31youtube2/31youtube2-superJumbo.jpg",
+          "format": "superJumbo",
+          "height": 1608,
+          "width": 2048,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Stars like Pharrell Williams have signed letters asking for changes to copyright laws.",
+          "copyright": "Christopher Polk/Getty Images"
+        }
+      ],
+      "short_url": "http://nyti.ms/1WXeqQB"
+    },
+    {
+      "section": "Business Day",
+      "subsection": "International Business",
+      "title": "Rise of Ad-Blocking Software Threatens Online Revenue",
+      "abstract": "A report suggests that one in five smartphone users worldwide deploys software to remove ads when he or she browses the web.",
+      "url": "http://www.nytimes.com/2016/05/31/business/international/smartphone-ad-blocking-software-mobile.html",
+      "byline": "By MARK SCOTT",
+      "item_type": "Article",
+      "updated_date": "2016-05-30T19:00:02-04:00",
+      "created_date": "2016-05-30T19:00:04-04:00",
+      "published_date": "2016-05-31T00:00:00-04:00",
+      "material_type_facet": "",
+      "kicker": "",
+      "des_facet": [
+        "Smartphones",
+        "Advertising and Marketing",
+        "Computers and the Internet",
+        "Online Advertising",
+        "Software",
+        "Mobile Applications"
+      ],
+      "org_facet": [
+        "Facebook Inc",
+        "Google Inc"
+      ],
+      "per_facet": [],
+      "geo_facet": [],
+      "multimedia": [],
+      "short_url": "http://nyti.ms/1WVi25C"
+    },
+    {
+      "section": "Business Day",
+      "subsection": "DealBook",
+      "title": "Dell Buyout Deal Shortchanged Shareholders, Court Rules",
+      "abstract": "The court found that Dell shares were worth about $17.62 at the time of the 2013 buyout, not the $13.75 that Michael S. Dell and Silver Lake paid.",
+      "url": "http://www.nytimes.com/2016/06/01/business/dealbook/dell-buyout-deal-shortchanged-shareholders-court-rules.html",
+      "byline": "By MICHAEL J. de la MERCED",
+      "item_type": "Article",
+      "updated_date": "2016-05-31T16:16:52-04:00",
+      "created_date": "2016-05-31T16:16:54-04:00",
+      "published_date": "2016-06-01T00:00:00-04:00",
+      "material_type_facet": "",
+      "kicker": "",
+      "des_facet": [
+        "Mergers, Acquisitions and Divestitures"
+      ],
+      "org_facet": [
+        "Dell Inc",
+        "Silver Lake Partners",
+        "Magnetar Capital",
+        "T Rowe Price Group Inc"
+      ],
+      "per_facet": [
+        "Laster, J Travis"
+      ],
+      "geo_facet": [
+        "Delaware"
+      ],
+      "multimedia": [],
+      "short_url": "http://nyti.ms/1WXl6y2"
+    },
+    {
+      "section": "Business Day",
+      "subsection": "DealBook",
+      "title": "Online Shareholder Meetings Lower Costs, but Also Interaction",
+      "abstract": "Done in person, the annual meeting is the sole opportunity that all shareholders have to meet and talk with management.",
+      "url": "http://www.nytimes.com/2016/06/01/business/dealbook/online-shareholder-meetings-lower-costs-but-also-interaction.html",
+      "byline": "By STEVEN DAVIDOFF SOLOMON",
+      "item_type": "Article",
+      "updated_date": "2016-05-31T13:41:45-04:00",
+      "created_date": "2016-05-31T13:41:48-04:00",
+      "published_date": "2016-06-01T00:00:00-04:00",
+      "material_type_facet": "",
+      "kicker": "",
+      "des_facet": [
+        "Boards of Directors",
+        "Shareholder Rights and Activism",
+        "Computers and the Internet"
+      ],
+      "org_facet": [],
+      "per_facet": [],
+      "geo_facet": [],
+      "multimedia": [
+        {
+          "url": "https://static01.nyt.com/images/2016/05/31/business/01db-dealprof/01db-dealprof-thumbStandard.jpg",
+          "format": "Standard Thumbnail",
+          "height": 75,
+          "width": 75,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "",
+          "copyright": "Harry Campbell"
+        },
+        {
+          "url": "https://static01.nyt.com/images/2016/05/31/business/01db-dealprof/01db-dealprof-thumbLarge.jpg",
+          "format": "thumbLarge",
+          "height": 150,
+          "width": 150,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "",
+          "copyright": "Harry Campbell"
+        },
+        {
+          "url": "https://static01.nyt.com/images/2016/05/31/business/01db-dealprof/01db-dealprof-articleInline.jpg",
+          "format": "Normal",
+          "height": 190,
+          "width": 190,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "",
+          "copyright": "Harry Campbell"
+        },
+        {
+          "url": "https://static01.nyt.com/images/2016/05/31/business/01db-dealprof/01db-dealprof-mediumThreeByTwo210.jpg",
+          "format": "mediumThreeByTwo210",
+          "height": 140,
+          "width": 210,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "",
+          "copyright": "Harry Campbell"
+        },
+        {
+          "url": "https://static01.nyt.com/images/2016/05/31/business/01db-dealprof/01db-dealprof-superJumbo.jpg",
+          "format": "superJumbo",
+          "height": 1152,
+          "width": 1152,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "",
+          "copyright": "Harry Campbell"
+        }
+      ],
+      "short_url": "http://nyti.ms/1WX2FJI"
+    },
+    {
+      "section": "U.S.",
+      "subsection": "",
+      "title": "Snowden Leaks Illegal but Were ‘a Public Service,’ Eric Holder Says",
+      "abstract": "The former attorney general credited Edward J. Snowden with raising the debate on national security, though he called his actions “inappropriate and illegal.”",
+      "url": "http://www.nytimes.com/2016/06/01/us/holder-says-snowden-performed-a-public-service.html",
+      "byline": "By JONAH BROMWICH",
+      "item_type": "Article",
+      "updated_date": "2016-05-31T12:13:35-04:00",
+      "created_date": "2016-05-31T12:13:37-04:00",
+      "published_date": "2016-06-01T00:00:00-04:00",
+      "material_type_facet": "",
+      "kicker": "",
+      "des_facet": [
+        "Surveillance of Citizens by Government",
+        "Classified Information and State Secrets",
+        "Podcasts"
+      ],
+      "org_facet": [],
+      "per_facet": [
+        "Holder, Eric H Jr",
+        "Snowden, Edward J"
+      ],
+      "geo_facet": [],
+      "multimedia": [
+        {
+          "url": "https://static01.nyt.com/images/2016/05/31/us/01xp-holder/01xp-holder-thumbStandard.jpg",
+          "format": "Standard Thumbnail",
+          "height": 75,
+          "width": 75,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Eric H. Holder Jr., left, and Edward J. Snowden.",
+          "copyright": "Carolyn Kaster/Associated Press, left, Andrew Kelly/Reuters"
+        },
+        {
+          "url": "https://static01.nyt.com/images/2016/05/31/us/01xp-holder/01xp-holder-thumbLarge.jpg",
+          "format": "thumbLarge",
+          "height": 150,
+          "width": 150,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Eric H. Holder Jr., left, and Edward J. Snowden.",
+          "copyright": "Carolyn Kaster/Associated Press, left, Andrew Kelly/Reuters"
+        },
+        {
+          "url": "https://static01.nyt.com/images/2016/05/31/us/01xp-holder/01xp-holder-articleInline.jpg",
+          "format": "Normal",
+          "height": 95,
+          "width": 190,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Eric H. Holder Jr., left, and Edward J. Snowden.",
+          "copyright": "Carolyn Kaster/Associated Press, left, Andrew Kelly/Reuters"
+        },
+        {
+          "url": "https://static01.nyt.com/images/2016/05/31/us/01xp-holder/01xp-holder-mediumThreeByTwo210.jpg",
+          "format": "mediumThreeByTwo210",
+          "height": 140,
+          "width": 210,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Eric H. Holder Jr., left, and Edward J. Snowden.",
+          "copyright": "Carolyn Kaster/Associated Press, left, Andrew Kelly/Reuters"
+        },
+        {
+          "url": "https://static01.nyt.com/images/2016/05/31/us/01xp-holder/01xp-holder-superJumbo.jpg",
+          "format": "superJumbo",
+          "height": 1024,
+          "width": 2048,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Eric H. Holder Jr., left, and Edward J. Snowden.",
+          "copyright": "Carolyn Kaster/Associated Press, left, Andrew Kelly/Reuters"
+        }
+      ],
+      "short_url": "http://nyti.ms/1WWPpEU"
+    },
+    {
+      "section": "U.S.",
+      "subsection": "Politics",
+      "title": "Stephen Hawking Calls Donald Trump a ‘Demagogue’",
+      "abstract": "The British physicist said that the Republican candidate for president was an impenetrable mystery.",
+      "url": "http://www.nytimes.com/2016/06/01/us/politics/stephen-hawking-calls-donald-trump-a-demagogue.html",
+      "byline": "By MIKE McPHATE",
+      "item_type": "Article",
+      "updated_date": "2016-05-31T10:48:23-04:00",
+      "created_date": "2016-05-31T10:48:25-04:00",
+      "published_date": "2016-06-01T00:00:00-04:00",
+      "material_type_facet": "",
+      "kicker": "",
+      "des_facet": [
+        "Presidential Election of 2016",
+        "Physics"
+      ],
+      "org_facet": [],
+      "per_facet": [
+        "Hawking, Stephen W",
+        "Trump, Donald J"
+      ],
+      "geo_facet": [],
+      "multimedia": [
+        {
+          "url": "https://static01.nyt.com/images/2016/05/31/us/01xp-hawking/01xp-hawking-thumbStandard.jpg",
+          "format": "Standard Thumbnail",
+          "height": 75,
+          "width": 75,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Stephen Hawking giving a lecture in 2014 in Tenerife on the Canary Islands.",
+          "copyright": "Desiree Martin/Agence France-Presse — Getty Images"
+        },
+        {
+          "url": "https://static01.nyt.com/images/2016/05/31/us/01xp-hawking/01xp-hawking-thumbLarge.jpg",
+          "format": "thumbLarge",
+          "height": 150,
+          "width": 150,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Stephen Hawking giving a lecture in 2014 in Tenerife on the Canary Islands.",
+          "copyright": "Desiree Martin/Agence France-Presse — Getty Images"
+        },
+        {
+          "url": "https://static01.nyt.com/images/2016/05/31/us/01xp-hawking/01xp-hawking-articleInline.jpg",
+          "format": "Normal",
+          "height": 127,
+          "width": 190,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Stephen Hawking giving a lecture in 2014 in Tenerife on the Canary Islands.",
+          "copyright": "Desiree Martin/Agence France-Presse — Getty Images"
+        },
+        {
+          "url": "https://static01.nyt.com/images/2016/05/31/us/01xp-hawking/01xp-hawking-mediumThreeByTwo210.jpg",
+          "format": "mediumThreeByTwo210",
+          "height": 140,
+          "width": 210,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Stephen Hawking giving a lecture in 2014 in Tenerife on the Canary Islands.",
+          "copyright": "Desiree Martin/Agence France-Presse — Getty Images"
+        },
+        {
+          "url": "https://static01.nyt.com/images/2016/05/31/us/01xp-hawking/01xp-hawking-superJumbo.jpg",
+          "format": "superJumbo",
+          "height": 1365,
+          "width": 2048,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Stephen Hawking giving a lecture in 2014 in Tenerife on the Canary Islands.",
+          "copyright": "Desiree Martin/Agence France-Presse — Getty Images"
+        }
+      ],
+      "short_url": "http://nyti.ms/1RJ4qSU"
+    },
+    {
+      "section": "Technology",
+      "subsection": "",
+      "title": "Software for Stopping Freedom",
+      "abstract": "Software companies are selling spying and hacking tools to governments interested in quashing human-rights workers, political dissidents and journalists.",
+      "url": "http://www.nytimes.com/2016/06/01/technology/software-for-stopping-freedom.html",
+      "byline": "By QUENTIN HARDY",
+      "item_type": "Article",
+      "updated_date": "2016-05-31T09:35:28-04:00",
+      "created_date": "2016-05-31T09:35:28-04:00",
+      "published_date": "2016-06-01T00:00:00-04:00",
+      "material_type_facet": "",
+      "kicker": "",
+      "des_facet": [
+        "Espionage and Intelligence Services",
+        "Cyberattacks and Hackers",
+        "Computers and the Internet"
+      ],
+      "org_facet": [],
+      "per_facet": [],
+      "geo_facet": [],
+      "multimedia": [
+        {
+          "url": "https://static01.nyt.com/images/2011/11/30/technology/bits-daily-report/bits-daily-report-thumbStandard-v5.png",
+          "format": "Standard Thumbnail",
+          "height": 75,
+          "width": 75,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "",
+          "copyright": ""
+        },
+        {
+          "url": "https://static01.nyt.com/images/2011/11/30/technology/bits-daily-report/bits-daily-report-thumbLarge-v5.png",
+          "format": "thumbLarge",
+          "height": 150,
+          "width": 150,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "",
+          "copyright": ""
+        },
+        {
+          "url": "https://static01.nyt.com/images/2011/11/30/technology/bits-daily-report/bits-daily-report-articleInline-v5.png",
+          "format": "Normal",
+          "height": 126,
+          "width": 190,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "",
+          "copyright": ""
+        },
+        {
+          "url": "https://static01.nyt.com/images/2011/11/30/technology/bits-daily-report/bits-daily-report-mediumThreeByTwo210-v4.png",
+          "format": "mediumThreeByTwo210",
+          "height": 140,
+          "width": 210,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "",
+          "copyright": ""
+        },
+        {
+          "url": "https://static01.nyt.com/images/2011/11/30/technology/bits-daily-report/bits-daily-report-superJumbo-v3.png",
+          "format": "superJumbo",
+          "height": 400,
+          "width": 600,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "",
+          "copyright": ""
+        }
+      ],
+      "short_url": "http://nyti.ms/1WWsGJm"
+    },
+    {
+      "section": "Technology",
+      "subsection": "Personal Tech",
+      "title": "Getting Up Close With the iOS Camera",
+      "abstract": "Apple’s built-in camera app for its iOS devices includes controls for zooming and other fine-tuning — if you know where to tap.",
+      "url": "http://www.nytimes.com/2016/06/01/technology/personaltech/getting-up-close-with-the-ios-camera.html",
+      "byline": "By J. D. BIERSDORFER",
+      "item_type": "Article",
+      "updated_date": "2016-05-31T09:33:07-04:00",
+      "created_date": "2016-05-31T09:33:09-04:00",
+      "published_date": "2016-06-01T00:00:00-04:00",
+      "material_type_facet": "",
+      "kicker": "",
+      "des_facet": [
+        "iOS (Operating System)",
+        "Cameras",
+        "Mobile Applications"
+      ],
+      "org_facet": [
+        "Apple Inc"
+      ],
+      "per_facet": [],
+      "geo_facet": [],
+      "multimedia": [
+        {
+          "url": "https://static01.nyt.com/images/2016/06/01/technology/personaltech/01techtipwebART/01techtipwebART-thumbStandard.jpg",
+          "format": "Standard Thumbnail",
+          "height": 75,
+          "width": 75,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "When using the iOS 9 Camera app, pinch your fingers on the screen to see a zoom slider appear. You can adjust the exposure by tapping an area of the screen and sliding the sun icon up or down.",
+          "copyright": "The New York Times"
+        },
+        {
+          "url": "https://static01.nyt.com/images/2016/06/01/technology/personaltech/01techtipwebART/01techtipwebART-thumbLarge.jpg",
+          "format": "thumbLarge",
+          "height": 150,
+          "width": 150,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "When using the iOS 9 Camera app, pinch your fingers on the screen to see a zoom slider appear. You can adjust the exposure by tapping an area of the screen and sliding the sun icon up or down.",
+          "copyright": "The New York Times"
+        },
+        {
+          "url": "https://static01.nyt.com/images/2016/06/01/technology/personaltech/01techtipwebART/01techtipwebART-articleInline.jpg",
+          "format": "Normal",
+          "height": 107,
+          "width": 190,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "When using the iOS 9 Camera app, pinch your fingers on the screen to see a zoom slider appear. You can adjust the exposure by tapping an area of the screen and sliding the sun icon up or down.",
+          "copyright": "The New York Times"
+        },
+        {
+          "url": "https://static01.nyt.com/images/2016/06/01/technology/personaltech/01techtipwebART/01techtipwebART-mediumThreeByTwo210.jpg",
+          "format": "mediumThreeByTwo210",
+          "height": 140,
+          "width": 210,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "When using the iOS 9 Camera app, pinch your fingers on the screen to see a zoom slider appear. You can adjust the exposure by tapping an area of the screen and sliding the sun icon up or down.",
+          "copyright": "The New York Times"
+        },
+        {
+          "url": "https://static01.nyt.com/images/2016/06/01/technology/personaltech/01techtipwebART/01techtipwebART-superJumbo.jpg",
+          "format": "superJumbo",
+          "height": 640,
+          "width": 1136,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "When using the iOS 9 Camera app, pinch your fingers on the screen to see a zoom slider appear. You can adjust the exposure by tapping an area of the screen and sliding the sun icon up or down.",
+          "copyright": "The New York Times"
+        }
+      ],
+      "short_url": "http://nyti.ms/1RINEn8"
+    },
+    {
+      "section": "World",
+      "subsection": "Asia Pacific",
+      "title": "Mumbai Police Ask for Video Mocking Celebrities to Be Deleted",
+      "abstract": "After receiving complaints from politicians, officers said they had asked Facebook and YouTube to remove a video mocking a cricket star and a Bollywood singer.",
+      "url": "http://www.nytimes.com/2016/06/01/world/asia/india-tanmay-bhat-sachin-lata.html",
+      "byline": "By NIDA NAJAR and SUHASINI RAJ",
+      "item_type": "Article",
+      "updated_date": "2016-05-31T08:32:03-04:00",
+      "created_date": "2016-05-31T08:05:05-04:00",
+      "published_date": "2016-06-01T00:00:00-04:00",
+      "material_type_facet": "",
+      "kicker": "",
+      "des_facet": [
+        "Video Recordings, Downloads and Streaming",
+        "Social Media",
+        "Computers and the Internet",
+        "Indecency, Obscenity and Profanity"
+      ],
+      "org_facet": [],
+      "per_facet": [
+        "Bhat, Tanmay",
+        "Mangeshkar, Lata",
+        "Tendulkar, Sachin"
+      ],
+      "geo_facet": [
+        "Mumbai (India)"
+      ],
+      "multimedia": [
+        {
+          "url": "https://static01.nyt.com/images/2016/06/01/world/01MUMBAI-web2/01MUMBAI-web2-thumbStandard.jpg",
+          "format": "Standard Thumbnail",
+          "height": 75,
+          "width": 75,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Lata Mangeshkar, who has sung the vocals for Bollywood heroines for decades, at an award ceremony in Hyderabad, India, in 2010. The Indian police have asked for a comedian’s video, which mocks the singer, to be removed from the web.",
+          "copyright": "Noah Seelam/Agence France-Presse — Getty Images"
+        },
+        {
+          "url": "https://static01.nyt.com/images/2016/06/01/world/01MUMBAI-web2/01MUMBAI-web2-thumbLarge.jpg",
+          "format": "thumbLarge",
+          "height": 150,
+          "width": 150,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Lata Mangeshkar, who has sung the vocals for Bollywood heroines for decades, at an award ceremony in Hyderabad, India, in 2010. The Indian police have asked for a comedian’s video, which mocks the singer, to be removed from the web.",
+          "copyright": "Noah Seelam/Agence France-Presse — Getty Images"
+        },
+        {
+          "url": "https://static01.nyt.com/images/2016/06/01/world/01MUMBAI-web2/01MUMBAI-web2-articleInline.jpg",
+          "format": "Normal",
+          "height": 132,
+          "width": 190,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Lata Mangeshkar, who has sung the vocals for Bollywood heroines for decades, at an award ceremony in Hyderabad, India, in 2010. The Indian police have asked for a comedian’s video, which mocks the singer, to be removed from the web.",
+          "copyright": "Noah Seelam/Agence France-Presse — Getty Images"
+        },
+        {
+          "url": "https://static01.nyt.com/images/2016/06/01/world/01MUMBAI-web2/01MUMBAI-web2-mediumThreeByTwo210.jpg",
+          "format": "mediumThreeByTwo210",
+          "height": 140,
+          "width": 210,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Lata Mangeshkar, who has sung the vocals for Bollywood heroines for decades, at an award ceremony in Hyderabad, India, in 2010. The Indian police have asked for a comedian’s video, which mocks the singer, to be removed from the web.",
+          "copyright": "Noah Seelam/Agence France-Presse — Getty Images"
+        },
+        {
+          "url": "https://static01.nyt.com/images/2016/06/01/world/01MUMBAI-web2/01MUMBAI-web2-superJumbo.jpg",
+          "format": "superJumbo",
+          "height": 1423,
+          "width": 2048,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Lata Mangeshkar, who has sung the vocals for Bollywood heroines for decades, at an award ceremony in Hyderabad, India, in 2010. The Indian police have asked for a comedian’s video, which mocks the singer, to be removed from the web.",
+          "copyright": "Noah Seelam/Agence France-Presse — Getty Images"
+        }
+      ],
+      "short_url": "http://nyti.ms/1WWhNau"
+    },
+    {
+      "section": "Business Day",
+      "subsection": "Economy",
+      "title": "A Universal Basic Income Is a Poor Tool to Fight Poverty",
+      "abstract": "In this world where work remains an important social, psychological and economic anchor, there are better tools to help than giving every American a monthly check.",
+      "url": "http://www.nytimes.com/2016/06/01/business/economy/universal-basic-income-poverty.html",
+      "byline": "By EDUARDO PORTER",
+      "item_type": "Article",
+      "updated_date": "2016-05-31T17:11:14-04:00",
+      "created_date": "2016-05-31T05:01:04-04:00",
+      "published_date": "2016-06-01T00:00:00-04:00",
+      "material_type_facet": "",
+      "kicker": "",
+      "des_facet": [
+        "Welfare (US)",
+        "Income",
+        "Poverty",
+        "Productivity"
+      ],
+      "org_facet": [],
+      "per_facet": [],
+      "geo_facet": [],
+      "multimedia": [
+        {
+          "url": "https://static01.nyt.com/images/2016/05/31/business/01porter/01porter-thumbStandard.jpg",
+          "format": "Standard Thumbnail",
+          "height": 75,
+          "width": 75,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "A person in a robot costume at the World Economic Forum in Davos in January promoted the basic income referendum in Switzerland.",
+          "copyright": "Rex Features, via Associated Press"
+        },
+        {
+          "url": "https://static01.nyt.com/images/2016/05/31/business/01porter/01porter-thumbLarge.jpg",
+          "format": "thumbLarge",
+          "height": 150,
+          "width": 150,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "A person in a robot costume at the World Economic Forum in Davos in January promoted the basic income referendum in Switzerland.",
+          "copyright": "Rex Features, via Associated Press"
+        },
+        {
+          "url": "https://static01.nyt.com/images/2016/05/31/business/01porter/01porter-articleInline.jpg",
+          "format": "Normal",
+          "height": 127,
+          "width": 190,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "A person in a robot costume at the World Economic Forum in Davos in January promoted the basic income referendum in Switzerland.",
+          "copyright": "Rex Features, via Associated Press"
+        },
+        {
+          "url": "https://static01.nyt.com/images/2016/05/31/business/01porter/01porter-mediumThreeByTwo210.jpg",
+          "format": "mediumThreeByTwo210",
+          "height": 140,
+          "width": 210,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "A person in a robot costume at the World Economic Forum in Davos in January promoted the basic income referendum in Switzerland.",
+          "copyright": "Rex Features, via Associated Press"
+        },
+        {
+          "url": "https://static01.nyt.com/images/2016/05/31/business/01porter/01porter-superJumbo.jpg",
+          "format": "superJumbo",
+          "height": 1367,
+          "width": 2048,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "A person in a robot costume at the World Economic Forum in Davos in January promoted the basic income referendum in Switzerland.",
+          "copyright": "Rex Features, via Associated Press"
+        }
+      ],
+      "short_url": "http://nyti.ms/1RKjwYs"
+    }
+  ]
+}]
