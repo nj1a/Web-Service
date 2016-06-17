@@ -1,0 +1,80 @@
+/* Start of basics */
+
+html {
+    font-size: 24px;
+    font-family: Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+body {
+    margin: 0.5rem;
+}
+
+a, a:link, a:visited {
+    color: #33CCCC;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #eee;
+}
+
+a:active {
+    color: #999;
+}
+
+h1 {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: 0.6rem;
+    font-weight: 400;
+    margin: 0.5rem 0 1rem;
+    text-transform: uppercase;
+}
+
+
+
+/* Start of header */
+
+header h1 {
+    margin: 3rem 0 1rem;
+    text-align: center;
+}
+
+
+
+/* Start of container */
+
+main {
+    margin: 0 auto; /* centres block level */
+    padding: 1rem;
+    text-align: center;
+    width: 50%;
+}
+
+
+
+/* Start of items */
+
+main article {
+    border: 2px dotted #000;
+    margin: 1rem auto;
+}
+
+
+
+/* Start of header */
+
+footer p {
+    font-size: 0.8rem;
+    text-align: center;
+}
