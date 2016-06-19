@@ -27,7 +27,13 @@ http.createServer(function(req, res) {
                               "short_url": resultsObj[i].short_url});
             }
             res.end(JSON.stringify(results)); 
-        } 
+        } else if (req.url === '/authors') {
+            var results = [];
+            for (var i = 0; i < 10; i++) {
+                results.push({"author": resultsObj[i].byline.slice(3)});
+            }
+            res.end(JSON.stringify(results)); 
+        }
     } else { // return page not found status
         res.statusCode = 404;
         res.end();

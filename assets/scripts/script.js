@@ -33,7 +33,24 @@ class NytimesApi {
     }
 
     getAuthors() {
+        $.ajax({
+            url: "http:localhost:8080/authors",
+            type: "GET",
+            dataType: "json",  
+        }).done(function(data, textStatus, jqXHR) {
+            for (var i = 0; i < 10; i++) {
+                var $article = $("<article/>");
 
+                var $author = $("<h3/>")
+                .text("Author: " + data[i].author)
+                .appendTo($article);
+
+                $article.appendTo("#display");
+            }
+
+        }).fail(function(jqXHR, textStatus, errorThrown) {
+            alert("Request failed: " + textStatus + " " + errorThrown);
+        });
     }
 
     getTags() {
@@ -53,8 +70,14 @@ class NytimesApi {
 $(document).ready(function() {
     var nytimesApi = new NytimesApi();
 
-    $("#find").click(function() {
+    $("#text-articles").click(function() {
+        $("#display").empty();
         nytimesApi.getTextArticles();
+    });
+
+    $("#authors").click(function() {
+        $("#display").empty();
+        nytimesApi.getAuthors();
     });
 });
 
