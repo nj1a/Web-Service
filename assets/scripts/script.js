@@ -1,7 +1,7 @@
-class REST {
-    allArticles() {
+class NytimesApi {
+    getTextArticles() {
         $.ajax({
-            url: "http:localhost:8080/",
+            url: "http:localhost:8080/text-articles",
             type: "GET",
             dataType: "json",  
         }).done(function(data, textStatus, jqXHR) {
@@ -18,14 +18,30 @@ class REST {
             alert("Request failed: " + textStatus + " " + errorThrown);
         });
     }
+
+    getAuthors() {
+
+    }
+
+    getTags() {
+
+    }
+
+    getArticle() {
+
+    }
+
+    getMediaArticles() {
+
+    }
 }
 
 
 $(document).ready(function() {
-    var r = new REST();
+    var nytimesApi = new NytimesApi();
 
     $("#find").click(function() {
-        r.allArticles();
+        nytimesApi.getTextArticles();
     });
 });
 
