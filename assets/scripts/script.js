@@ -5,13 +5,22 @@ class NytimesApi {
             type: "GET",
             dataType: "json",  
         }).done(function(data, textStatus, jqXHR) {
-            var $obj = data[0];
-            for (var $key in $obj) {
+            for (var i = 0; i < 10; i++) {
+                var $title = $("<h3/>")
+                .text("Title: " + data[i].title)
+                .appendTo("#display");
 
-                var $name = $("<h3/>", {
-                    text: $key
-                });
-                $("#topthree").append($name);
+                var $abstract = $("<h3/>")
+                .text("Abstract: " + data[i].abstract)
+                .appendTo("#display");
+
+                var $publishedDate = $("<h3/>")
+                .text("Published Date: " + data[i].published_date.slice(0, 10))
+                .appendTo("#display");
+
+                var $snf = $("<h3/>")
+                .text("snf: " + data[i].short_url)
+                .appendTo("#display");
             }
 
         }).fail(function(jqXHR, textStatus, errorThrown) {
