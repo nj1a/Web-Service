@@ -12,11 +12,14 @@ body {
 
 a, a:link, a:visited {
     color: #33CCCC;
-    text-decoration: underline;
+    display: block;
+    text-decoration: none;
+    padding: 0.2rem;
 }
 
 a:hover {
     color: #eee;
+    text-decoration: underline;
 }
 
 a:active {

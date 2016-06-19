@@ -21,16 +21,24 @@ http.createServer(function(req, res) {
         if (req.url === '/text-articles') {
             var results = [];
             for (var i = 0; i < 10; i++) {
-                results.push({"title": resultsObj[i].title, 
-                              "abstract": resultsObj[i].abstract,
-                              "published_date": resultsObj[i].published_date,
-                              "short_url": resultsObj[i].short_url});
+                results.push({title: resultsObj[i].title, 
+                              abstract: resultsObj[i].abstract,
+                              published_date: resultsObj[i].published_date,
+                              short_url: resultsObj[i].short_url});
             }
             res.end(JSON.stringify(results)); 
         } else if (req.url === '/authors') {
             var results = [];
             for (var i = 0; i < 10; i++) {
-                results.push({"author": resultsObj[i].byline.slice(3)});
+                results.push({author: resultsObj[i].byline.slice(3)});
+            }
+            res.end(JSON.stringify(results)); 
+        } else if (req.url === '/urls') {
+            var temp = [];
+            var results = [];
+            for (var i = 0; i < 10; i++) {
+                results.push({published_date: resultsObj[i].published_date,
+                              short_url: resultsObj[i].short_url});
             }
             res.end(JSON.stringify(results)); 
         }
