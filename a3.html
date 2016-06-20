@@ -4,7 +4,9 @@
         <meta charset="UTF-8">
         <title>Web Serivice</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!-- css stylesheet -->
         <link href="assets/styles/style.css" type="text/css" rel="stylesheet">
+        <!-- javascript and jQuery -->
         <script type="text/javascript" src="assets/scripts/jquery-3.0.0.js" defer></script>
         <script type="text/javascript" src="assets/scripts/script.js" defer></script>
     </head>
@@ -13,28 +15,25 @@
         
         <header>
             <h1>My New York Times Collection</h1>
-        </header>
+        </header> <!-- end header -->
         
         <main>
-            <button id="textArticles">Text Articles</button>
-            <button id="authors">All Authors</button>
-            <button id="urls">All URLs</button>
-            <button id="tags">All Tags</button>
-
-            <h3>Article Index:</h3> 
-            <input type="text" id="index" value="0">
-            <button id="article">Article</button>
-            <button id="mediaArticles">Media Articles</button>
+            <!-- buttons for calling ajax functions -->
+            <button class="button1" id="textArticles">Text Articles</button>
+            <button class="button2" id="authors">All Authors</button>
+            <button class="button3" id="urls">All URLs</button>
+            <button class="button1" id="tags">All Tags</button>
+            <input type="number" id="index" value="0">
+            <button class="button2" id="article">Article</button>
+            <button class="button3" id="mediaArticles">Media Articles</button>
             <section id="display">
                 <!-- all the response displayed here -->
             </section>
-        </main>
+        </main> <!-- end main -->
         
         <footer>
-            <p>
-                Copyright 2016.
-            </p>
-        </footer>
+            <h3>Copyright 2016.</h3>
+        </footer> <!-- end footer -->
         
     </body>
 </html> 

@@ -1,4 +1,4 @@
-/* Start of basics */
+/* start of general styles */
 
 html {
     font-size: 24px;
@@ -8,22 +8,6 @@ html {
 
 body {
     margin: 0.5rem;
-}
-
-a, a:link, a:visited {
-    color: #33CCCC;
-    display: block;
-    text-decoration: none;
-    padding: 0.2rem;
-}
-
-a:hover {
-    color: #eee;
-    text-decoration: underline;
-}
-
-a:active {
-    color: #999;
 }
 
 h1 {
@@ -43,14 +27,79 @@ h3 {
     margin: 0.5rem 0 1rem;
 }
 
-/* Start of header */
+/* start of button styles */
+
+button {
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button1 {
+    background-color: white;
+    color: #423f36;
+    border: 2px solid #3cc98c;
+}
+
+.button1:hover {
+    background-color: #3cc98c;
+    color: white;
+}
+
+.button2 {
+    background-color: white;
+    color: #423f36;
+    border: 2px solid #41c0d3;
+}
+
+.button2:hover {
+    background-color: #41c0d3;
+    color: white;
+}
+
+.button3 {
+    background-color: white;
+    color: #423f36;
+    border: 2px solid #d3c741;
+}
+
+.button3:hover {
+    background-color: #d3c741;
+    color: white;
+}
+
+/* start of link styles */
+
+a, a:link, a:visited {
+    color: #d34d41;
+    display: block;
+    text-decoration: none;
+    padding: 0.2rem;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    color: #999;
+}
+
+/* start of header styles */
 
 header h1 {
     margin: 3rem 0 1rem;
     text-align: center;
 }
 
-/* Start of container */
+/* start of main styles */
 
 main {
     margin: 0 auto; /* centres block level */
@@ -59,20 +108,24 @@ main {
     width: 60%;
 }
 
-/* Start of items */
-
 main article {
     border: 2px solid #000;
     margin: 1rem auto;
 }
 
-/* Start of header */
+input {
+    color: #000;
+    border: none;
+    border-bottom: 2px solid #41c0d3;
+    border-radius: 5px;
+}
+/* start of footer styles */
 
-footer p {
-    font-size: 0.8rem;
+footer h3 {
     text-align: center;
 }
 
+/* styles for the tag cloud */
 
 #tagCloud { 
     width: 100%; 
@@ -93,10 +146,11 @@ footer p {
     float: left; 
     margin: 0 10px; 
     height: 35px;
-    color: #ffffff;
+    color: #FFFFFF;
 }
 
 @media only screen and (max-width: 768px) {
+    /* change width to 90% when using smaller screens */
     main {
         width: 90%;
     }
