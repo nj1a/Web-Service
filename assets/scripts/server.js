@@ -21,6 +21,7 @@ http.createServer(function(req, res) {
         if (req.url === '/text-articles') {
             var results = [];
             for (var i = 0; i < 10; i++) {
+                console.log(resultsObj[i].title);
                 results.push({title: resultsObj[i].title, 
                               abstract: resultsObj[i].abstract,
                               published_date: resultsObj[i].published_date,
@@ -39,6 +40,13 @@ http.createServer(function(req, res) {
             for (var i = 0; i < 10; i++) {
                 results.push({published_date: resultsObj[i].published_date,
                               short_url: resultsObj[i].short_url});
+            }
+            res.end(JSON.stringify(results)); 
+        } else if (req.url === '/tags') {
+            var results = [];
+            for (var i = 0; i < 10; i++) {
+                console.log(resultsObj[i].des_facet);
+                results.push({des_facet: resultsObj[i].des_facet});
             }
             res.end(JSON.stringify(results)); 
         }

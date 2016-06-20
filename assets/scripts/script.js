@@ -1,3 +1,5 @@
+// this class implements ajax methods used to initiate HTTP requests to retrive
+// information from a node.js server
 class NytimesApi {
     getTextArticles() {
         $.ajax({
@@ -5,8 +7,10 @@ class NytimesApi {
             type: "GET",
             dataType: "json",  
         }).done(function(data, textStatus, jqXHR) {
+            // append all titles, abstracts, published dates, and short urls
             for (var i = 0; i < 10; i++) {
-                var $article = $("<article/>");
+                var $article = $("<article/>")
+                .appendTo("#display");
 
                 var $title = $("<h3/>")
                 .text("Title: " + data[i].title)
@@ -23,10 +27,7 @@ class NytimesApi {
                 var $snf = $("<h3/>")
                 .text("snf: " + data[i].short_url)
                 .appendTo($article);
-
-                $article.appendTo("#display");
             }
-
         }).fail(function(jqXHR, textStatus, errorThrown) {
             alert("Request failed: " + textStatus + " " + errorThrown);
         });
@@ -38,16 +39,15 @@ class NytimesApi {
             type: "GET",
             dataType: "json",  
         }).done(function(data, textStatus, jqXHR) {
+            // append all authors
             for (var i = 0; i < data.length; i++) {
-                var $article = $("<article/>");
+                var $article = $("<article/>")
+                .appendTo("#display");
 
                 var $author = $("<h3/>")
                 .text("Author: " + data[i].author)
                 .appendTo($article);
-
-                $article.appendTo("#display");
             }
-
         }).fail(function(jqXHR, textStatus, errorThrown) {
             alert("Request failed: " + textStatus + " " + errorThrown);
         });
@@ -59,9 +59,9 @@ class NytimesApi {
             type: "GET",
             dataType: "json",  
         }).done(function(data, textStatus, jqXHR) {
-            var newArray = [],
-                publishedDates = {},
-                newItem, cur;
+            var newArray = [], publishedDates = {}, newItem, cur;
+
+            // group short urls by common published dates
             for (var i = 0; i < data.length; i++) {
                 cur = data[i];
                 if (!(cur.published_date in publishedDates)) {
@@ -73,12 +73,15 @@ class NytimesApi {
             }
 
             for (var i = 0; i < newArray.length; i++) {
-                var $article = $("<article/>");
+                var $article = $("<article/>")
+                .appendTo("#display");
 
+                // append one published date
                 var $publishedDate = $("<h3/>")
                 .text("Published Date: " + newArray[i].published_date)
                 .appendTo($article);
 
+                // append all shorts urls as links with this published date
                 var urls = newArray[i].short_urls;
                 for (var j = 0; j < urls.length; j++) {
                     $("<a/>")
@@ -86,16 +89,57 @@ class NytimesApi {
                     .attr("href", urls[j])
                     .appendTo($article);
                 }
-                $article.appendTo("#display");
             }
-
         }).fail(function(jqXHR, textStatus, errorThrown) {
             alert("Request failed: " + textStatus + " " + errorThrown);
         });
     }
 
     getTags() {
+        $.ajax({
+            url: "http:localhost:8080/tags",
+            type: "GET",
+            dataType: "json",  
+        }).done(function(data, textStatus, jqXHR) {
+            var tags = [], stats = {}, uniqueTags;
 
+            // put all tags into an array
+            for (var i = 0; i < data.length; i++) {
+                for (var j = 0; j < data[i].des_facet.length; j++) {
+                    tags.push(data[i].des_facet[j]); 
+                }
+            }
+
+            // initialize the tag cloud and append a unordered list
+            var $article = $("<article/>")
+            .attr("id", "tagCloud")
+            .appendTo("#display");
+            $("<ul>").attr("id", "tagList").appendTo("#tagCloud");
+
+            // calculate tag frequency
+            $.each(tags, function(idx, tag) {
+                stats[tag] = stats.hasOwnProperty(tag) ? stats[tag] + 1 : 1;
+            });
+
+            // reduce to an array containing unique tags
+            uniqueTags = Array.from(new Set(tags));
+            
+            $.each(uniqueTags, function(idx, tag) {
+                // create and append tag to the list
+                var $li = $("<li>")
+                .text(tag)
+                .appendTo("#tagList");
+
+                // give tags different font sizes depending on their frequency
+                $li.css("font-size",
+                (stats[tag] / 7 < 1) ? 
+                    stats[tag] / 7 + 1 + "em": (stats[tag] / 7 > 2) ? 
+                        "2em" : stats[tag] / 7 + "em");
+            });
+
+        }).fail(function(jqXHR, textStatus, errorThrown) {
+            alert("Request failed: " + textStatus + " " + errorThrown);
+        });
     }
 
     getArticle() {
@@ -121,9 +165,14 @@ $(document).ready(function() {
         nytimesApi.getAuthors();
     });
 
-    $("#url").click(function() {
+    $("#urls").click(function() {
         $("#display").empty();
         nytimesApi.getURLs();
+    });
+
+    $("#tags").click(function() {
+        $("#display").empty();
+        nytimesApi.getTags();
     });
 });
 
