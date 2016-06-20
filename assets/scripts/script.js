@@ -28,6 +28,7 @@ class NytimesApi {
                 .text("snf: " + data[i].short_url)
                 .appendTo($article);
             }
+
         }).fail(function(jqXHR, textStatus, errorThrown) {
             alert("Request failed: " + textStatus + " " + errorThrown);
         });
@@ -48,6 +49,7 @@ class NytimesApi {
                 .text("Author: " + data[i].author)
                 .appendTo($article);
             }
+
         }).fail(function(jqXHR, textStatus, errorThrown) {
             alert("Request failed: " + textStatus + " " + errorThrown);
         });
@@ -90,6 +92,7 @@ class NytimesApi {
                     .appendTo($article);
                 }
             }
+
         }).fail(function(jqXHR, textStatus, errorThrown) {
             alert("Request failed: " + textStatus + " " + errorThrown);
         });
@@ -148,39 +151,45 @@ class NytimesApi {
             type: "GET",
             dataType: "json",  
         }).done(function(data, textStatus, jqXHR) {
+            // get an article by index with detailed information
             var data = data[0];
 
-            var $article = $("<article/>")
-            .appendTo("#display");
+            if (data != null) {
+                var $article = $("<article/>")
+                .appendTo("#display");
 
-            var $section = $("<h3/>")
-            .text("Section: " + data.section)
-            .appendTo($article);
+                var $section = $("<h3/>")
+                .text("Section: " + data.section)
+                .appendTo($article);
 
-            var $subsection = $("<h3/>")
-            .text("Subsection: " + data.subsection)
-            .appendTo($article);
+                var $subsection = $("<h3/>")
+                .text("Subsection: " + data.subsection)
+                .appendTo($article);
 
-            var $title = $("<h3/>")
-            .text("Title: " + data.title)
-            .appendTo($article);
+                var $title = $("<h3/>")
+                .text("Title: " + data.title)
+                .appendTo($article);
 
-            var $abstract = $("<h3/>")
-            .text("Abstract: " + data.abstract)
-            .appendTo($article);
+                var $abstract = $("<h3/>")
+                .text("Abstract: " + data.abstract)
+                .appendTo($article);
 
-            var $byline = $("<h3/>")
-            .text("Byline: " + data.byline)
-            .appendTo($article);
+                var $byline = $("<h3/>")
+                .text("Byline: " + data.byline)
+                .appendTo($article);
 
-            var $publishedDate = $("<h3/>")
-            .text("Published Date: " + data.published_date.slice(0, 10))
-            .appendTo($article);
+                var $publishedDate = $("<h3/>")
+                .text("Published Date: " + data.published_date.slice(0, 10))
+                .appendTo($article);
 
-            var $tag = $("<h3/>")
-            .text("Tag: " + data.des_facet)
-            .appendTo($article);
-            
+                var $tag = $("<h3/>")
+                .text("Tag: " + data.des_facet)
+                .appendTo($article);
+                
+            } else {
+                alert("Not valid index. Try another number!");
+            }
+
         }).fail(function(jqXHR, textStatus, errorThrown) {
             alert("Request failed: " + textStatus + " " + errorThrown);
         });
@@ -198,6 +207,8 @@ class NytimesApi {
                 var $article = $("<article/>")
                 .appendTo("#display");
 
+                // media is not empty and an hyperlinked image or a video is 
+                // displayed
                 if (data[i].multimedia) {
                     var $link = $("<a/>")
                     .attr("src", data[i].multimedia.url)
@@ -213,21 +224,21 @@ class NytimesApi {
                            "width": data[i].multimedia.width,
                            "height": data[i].multimedia.height})
                     .appendTo($link);
-                } else {
+                } else { // article's title as placeholder
                     var $media = $("<a/>")
                     .text(data[i].title)
                     .attr("href", data[i].short_url)
                     .appendTo($article);
                 }
-
             }
+            
         }).fail(function(jqXHR, textStatus, errorThrown) {
             alert("Request failed: " + textStatus + " " + errorThrown);
         });
     }
 }
 
-
+// attach ajax functions to each button
 $(document).ready(function() {
     var nytimesApi = new NytimesApi();
 
