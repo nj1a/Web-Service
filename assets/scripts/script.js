@@ -187,7 +187,43 @@ class NytimesApi {
     }
 
     getMediaArticles() {
+        $.ajax({
+            url: "http:localhost:8080/media-articles",
+            type: "GET",
+            dataType: "json",  
+        }).done(function(data, textStatus, jqXHR) {
+            var element;
 
+            for (var i = 0; i < data.length; i++) {
+                var $article = $("<article/>")
+                .appendTo("#display");
+
+                if (data[i].multimedia) {
+                    var $link = $("<a/>")
+                    .attr("src", data[i].multimedia.url)
+                    .appendTo($article);
+
+                    if (data[i].multimedia.type == "image") {
+                        element = "<img/>";
+                    }
+
+                    var $media = $(element)
+                    .attr({"src": data[i].multimedia.url,
+                           "alt": data[i].multimedia.caption,
+                           "width": data[i].multimedia.width,
+                           "height": data[i].multimedia.height})
+                    .appendTo($link);
+                } else {
+                    var $media = $("<a/>")
+                    .text(data[i].title)
+                    .attr("href", data[i].short_url)
+                    .appendTo($article);
+                }
+
+            }
+        }).fail(function(jqXHR, textStatus, errorThrown) {
+            alert("Request failed: " + textStatus + " " + errorThrown);
+        });
     }
 }
 
@@ -195,7 +231,7 @@ class NytimesApi {
 $(document).ready(function() {
     var nytimesApi = new NytimesApi();
 
-    $("#text-articles").click(function() {
+    $("#textArticles").click(function() {
         $("#display").empty();
         nytimesApi.getTextArticles();
     });
@@ -219,6 +255,11 @@ $(document).ready(function() {
         $("#display").empty();
         var idx = $("#index").val();
         nytimesApi.getArticle(idx);
+    });
+
+    $("#mediaArticles").click(function() {
+        $("#display").empty();
+        nytimesApi.getMediaArticles();
     });
 });
 

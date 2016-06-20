@@ -20,7 +20,7 @@ http.createServer(function(req, res) {
     if (req.method === 'GET') {
         if (req.url === '/text-articles') {
             var results = [];
-            for (var i = 0; i < 10; i++) {
+            for (var i = 0; i < resultsObj.length; i++) {
                 console.log(resultsObj[i].title);
                 results.push({title: resultsObj[i].title, 
                               abstract: resultsObj[i].abstract,
@@ -30,21 +30,21 @@ http.createServer(function(req, res) {
             res.end(JSON.stringify(results)); 
         } else if (req.url === '/authors') {
             var results = [];
-            for (var i = 0; i < 10; i++) {
+            for (var i = 0; i < resultsObj.length; i++) {
                 results.push({author: resultsObj[i].byline.slice(3)});
             }
             res.end(JSON.stringify(results)); 
         } else if (req.url === '/urls') {
             var temp = [];
             var results = [];
-            for (var i = 0; i < 10; i++) {
+            for (var i = 0; i < resultsObj.length; i++) {
                 results.push({published_date: resultsObj[i].published_date,
                               short_url: resultsObj[i].short_url});
             }
             res.end(JSON.stringify(results)); 
         } else if (req.url === '/tags') {
             var results = [];
-            for (var i = 0; i < 10; i++) {
+            for (var i = 0; i < resultsObj.length; i++) {
                 console.log(resultsObj[i].des_facet);
                 results.push({des_facet: resultsObj[i].des_facet});
             }
@@ -65,7 +65,20 @@ http.createServer(function(req, res) {
 
                 res.end(JSON.stringify(result));
             }
-
+        } else if (req.url === '/media-articles') {
+            var results = [];
+            for (var i = 0; i < resultsObj.length; i++) {
+                var media = resultsObj[i].multimedia;
+                if (media.length > 0) {
+                    var idx = Math.floor(Math.random() * media.length);
+                    results.push({multimedia : media[idx],
+                                  short_url: resultsObj[i].short_url});
+                } else {
+                    results.push({title: resultsObj[i].title,
+                                  short_url: resultsObj[i].short_url});
+                }
+            }
+            res.end(JSON.stringify(results));
         }
     } else { // return page not found status
         res.statusCode = 404;
