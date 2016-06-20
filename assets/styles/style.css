@@ -12,19 +12,20 @@ body {
 
 h1 {
     font-size: 1rem;
-    font-weight: 400;
 }
 
 h2 {
     font-size: 1rem;
-    font-weight: 400;
     text-transform: uppercase;
 }
 
 h3 {
     font-size: 0.6rem;
-    font-weight: 400;
     margin: 0.5rem 0 1rem;
+}
+
+p {
+    font-size: 0.7rem;
 }
 
 /* start of button styles */
