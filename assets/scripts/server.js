@@ -49,6 +49,23 @@ http.createServer(function(req, res) {
                 results.push({des_facet: resultsObj[i].des_facet});
             }
             res.end(JSON.stringify(results)); 
+        } else if (req.url.slice(0, 9) === '/articles') {
+            var result = [];
+            var idx = parseInt(req.url.slice(10));
+            if (idx < resultsObj.length) {
+                var article = resultsObj[idx];
+
+                result.push({section: article.section,
+                            subsection: article.subsection,
+                            title: article.title,
+                            abstract: article.abstract,
+                            byline: article.byline,
+                            published_date: article.published_date,
+                            des_facet: article.des_facet});
+
+                res.end(JSON.stringify(result));
+            }
+
         }
     } else { // return page not found status
         res.statusCode = 404;

@@ -142,8 +142,48 @@ class NytimesApi {
         });
     }
 
-    getArticle() {
+    getArticle(idx) {
+        $.ajax({
+            url: "http:localhost:8080/articles/" + idx,
+            type: "GET",
+            dataType: "json",  
+        }).done(function(data, textStatus, jqXHR) {
+            var data = data[0];
 
+            var $article = $("<article/>")
+            .appendTo("#display");
+
+            var $section = $("<h3/>")
+            .text("Section: " + data.section)
+            .appendTo($article);
+
+            var $subsection = $("<h3/>")
+            .text("Subsection: " + data.subsection)
+            .appendTo($article);
+
+            var $title = $("<h3/>")
+            .text("Title: " + data.title)
+            .appendTo($article);
+
+            var $abstract = $("<h3/>")
+            .text("Abstract: " + data.abstract)
+            .appendTo($article);
+
+            var $byline = $("<h3/>")
+            .text("Byline: " + data.byline)
+            .appendTo($article);
+
+            var $publishedDate = $("<h3/>")
+            .text("Published Date: " + data.published_date.slice(0, 10))
+            .appendTo($article);
+
+            var $tag = $("<h3/>")
+            .text("Tag: " + data.des_facet)
+            .appendTo($article);
+            
+        }).fail(function(jqXHR, textStatus, errorThrown) {
+            alert("Request failed: " + textStatus + " " + errorThrown);
+        });
     }
 
     getMediaArticles() {
@@ -173,6 +213,12 @@ $(document).ready(function() {
     $("#tags").click(function() {
         $("#display").empty();
         nytimesApi.getTags();
+    });
+
+    $("#article").click(function() {
+        $("#display").empty();
+        var idx = $("#index").val();
+        nytimesApi.getArticle(idx);
     });
 });
 
