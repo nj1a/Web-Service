@@ -8,16 +8,16 @@ class NytimesApi {
             dataType: "json",  
         }).done(function(data, textStatus, jqXHR) {
             // append all titles, abstracts, published dates, and short urls
-            for (var i = 0; i < 10; i++) {
+            for (var i = 0; i < data.length; i++) {
                 var $article = $("<article/>")
                 .appendTo("#display");
 
                 var $title = $("<h3/>")
-                .text("Title: " + data[i].title.replace(/�/g, "'"))
+                .text("Title: " + data[i].title)
                 .appendTo($article);
 
                 var $abstract = $("<h3/>")
-                .text("Abstract: " + data[i].abstract.replace(/�/g, "'"))
+                .text("Abstract: " + data[i].abstract)
                 .appendTo($article);
 
                 var $publishedDate = $("<h3/>")
@@ -214,11 +214,7 @@ class NytimesApi {
                     .attr("src", data[i].multimedia.url)
                     .appendTo($article);
 
-                    if (data[i].multimedia.type == "image") {
-                        element = "<img/>";
-                    }
-
-                    var $media = $(element)
+                    var $media = $("<img/>")
                     .attr({"src": data[i].multimedia.url,
                            "alt": data[i].multimedia.caption,
                            "width": data[i].multimedia.width,
