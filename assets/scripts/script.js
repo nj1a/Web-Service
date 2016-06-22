@@ -3,7 +3,7 @@
 class NytimesApi {
     getTextArticles() {
         $.ajax({
-            url: "http:localhost:8080/text-articles",
+            url: "/text-articles",
             type: "GET",
             dataType: "json",  
         }).done(function(data, textStatus, jqXHR) {
@@ -13,11 +13,11 @@ class NytimesApi {
                 .appendTo("#display");
 
                 var $title = $("<h3/>")
-                .text("Title: " + data[i].title)
+                .text("Title: " + data[i].title.replace(/�/g, "'"))
                 .appendTo($article);
 
                 var $abstract = $("<h3/>")
-                .text("Abstract: " + data[i].abstract)
+                .text("Abstract: " + data[i].abstract.replace(/�/g, "'"))
                 .appendTo($article);
 
                 var $publishedDate = $("<h3/>")
@@ -36,7 +36,7 @@ class NytimesApi {
 
     getAuthors() {
         $.ajax({
-            url: "http:localhost:8080/authors",
+            url: "/authors",
             type: "GET",
             dataType: "json",  
         }).done(function(data, textStatus, jqXHR) {
@@ -57,7 +57,7 @@ class NytimesApi {
 
     getURLs() {
         $.ajax({
-            url: "http:localhost:8080/urls",
+            url: "/urls",
             type: "GET",
             dataType: "json",  
         }).done(function(data, textStatus, jqXHR) {
@@ -100,7 +100,7 @@ class NytimesApi {
 
     getTags() {
         $.ajax({
-            url: "http:localhost:8080/tags",
+            url: "/tags",
             type: "GET",
             dataType: "json",  
         }).done(function(data, textStatus, jqXHR) {
@@ -147,7 +147,7 @@ class NytimesApi {
 
     getArticle(idx) {
         $.ajax({
-            url: "http:localhost:8080/articles/" + idx,
+            url: "/articles/" + idx,
             type: "GET",
             dataType: "json",  
         }).done(function(data, textStatus, jqXHR) {
@@ -197,7 +197,7 @@ class NytimesApi {
 
     getMediaArticles() {
         $.ajax({
-            url: "http:localhost:8080/media-articles",
+            url: "/media-articles",
             type: "GET",
             dataType: "json",  
         }).done(function(data, textStatus, jqXHR) {
