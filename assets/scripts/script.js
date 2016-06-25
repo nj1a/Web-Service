@@ -40,15 +40,23 @@ class NytimesApi {
             type: "GET",
             dataType: "json",  
         }).done(function(data, textStatus, jqXHR) {
+            var $article = $("<article/>")
+            .appendTo("#display");
+
+            var authors = "Authors: ";
+
             // append all authors
             for (var i = 0; i < data.length; i++) {
-                var $article = $("<article/>")
-                .appendTo("#display");
+                authors += data[i].author;
 
-                var $author = $("<h3/>")
-                .text("Author: " + data[i].author)
-                .appendTo($article);
+                if (i != data.length - 1) {
+                    authors += ", ";
+                }
             }
+
+            var $author = $("<h3/>")
+            .text(authors)
+            .appendTo($article);
 
         }).fail(function(jqXHR, textStatus, errorThrown) {
             alert("Request failed: " + textStatus + " " + errorThrown);
@@ -61,30 +69,17 @@ class NytimesApi {
             type: "GET",
             dataType: "json",  
         }).done(function(data, textStatus, jqXHR) {
-            var newArray = [], publishedDates = {}, newItem, cur;
-
-            // group short urls by common published dates
             for (var i = 0; i < data.length; i++) {
-                cur = data[i];
-                if (!(cur.published_date in publishedDates)) {
-                    publishedDates[cur.published_date] = 
-                            {published_date: cur.published_date, short_urls: []};
-                    newArray.push(publishedDates[cur.published_date]);
-                }
-                publishedDates[cur.published_date].short_urls.push(cur.short_url);
-            }
-
-            for (var i = 0; i < newArray.length; i++) {
                 var $article = $("<article/>")
                 .appendTo("#display");
 
                 // append one published date
                 var $publishedDate = $("<h3/>")
-                .text("Published Date: " + newArray[i].published_date)
+                .text("Published Date: " + data[i].published_date)
                 .appendTo($article);
 
                 // append all shorts urls as links with this published date
-                var urls = newArray[i].short_urls;
+                var urls = data[i].short_urls;
                 for (var j = 0; j < urls.length; j++) {
                     $("<a/>")
                     .text(urls[j])

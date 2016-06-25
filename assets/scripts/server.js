@@ -63,19 +63,42 @@ http.createServer(function(req, res) {
 
                 for (var i = 0; i < resultsObj.length; i++) {
                     // add author name without the By part
-                    results.push({author: resultsObj[i].byline.slice(3)});
+                    var name = resultsObj[i].byline.slice(3);
+
+                    // convert names to first letter capital and rest lowercase
+                    name = name.replace(/\w\S*/g, function(txt) {
+                        return txt.charAt(0).toUpperCase() + 
+                                txt.substr(1).toLowerCase();
+                    });
+
+                    results.push({author: name});
                 }
                 res.end(JSON.stringify(results)); 
 
             } else if (req.url === '/urls') {
-                var temp = [], results = [];
+                var results = [];
 
                 for (var i = 0; i < resultsObj.length; i++) {
                     // add all published date and short url
                     results.push({published_date: resultsObj[i].published_date,
                                 short_url: resultsObj[i].short_url});
                 }
-                res.end(JSON.stringify(results));
+
+                // group short urls by common published dates
+                var newArray = [], publishedDates = {}, newItem, cur;
+                for (var i = 0; i < results.length; i++) {
+                    cur = results[i];
+                    if (!(cur.published_date in publishedDates)) {
+                        publishedDates[cur.published_date] = 
+                                {published_date: cur.published_date, 
+                                 short_urls: []};
+                        newArray.push(publishedDates[cur.published_date]);
+                    }
+                    publishedDates[cur.published_date].short_urls.
+                                                    push(cur.short_url);
+                }
+
+                res.end(JSON.stringify(newArray));
 
             } else if (req.url === '/tags') {
                 var results = [];
