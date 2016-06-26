@@ -1,6 +1,7 @@
 // import core library and the JSON file to be read
 var http = require('http'),
     fs = require('fs'),
+    qs = require('querystring');
     nytObj = require('../../nytimes.json');
     
 // use only the result section of the file
@@ -150,7 +151,20 @@ http.createServer(function(req, res) {
                 res.end(JSON.stringify(results));
             }
         }
+    } else if (req.method == 'POST') {
+        var body = '';
 
+        req.on('data', function (data) {
+            body += data;
+
+            if (body.length > 1e6)
+                req.connection.destroy();
+        }).on('end', function () {
+            var post = qs.parse(body);
+            console.log(post.uname);
+        });
+
+        res.end("Hello");
     }
 
 }).listen(8080); // listen on port 8080
