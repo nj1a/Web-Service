@@ -43,20 +43,19 @@ class NytimesApi {
             var $article = $("<article/>")
             .appendTo("#display");
 
-            var authors = "Authors: ";
+            $("<h2/>")
+            .text("List of Authors:")
+            .appendTo($article);
+
+            var $authors = $("<ul/>").appendTo($article);
 
             // append all authors
             for (var i = 0; i < data.length; i++) {
-                authors += data[i].author;
+                $("<li/>")
+                .text(data[i].author)
+                .appendTo($article);
 
-                if (i != data.length - 1) {
-                    authors += ", ";
-                }
             }
-
-            var $author = $("<h3/>")
-            .text(authors)
-            .appendTo($article);
 
         }).fail(function(jqXHR, textStatus, errorThrown) {
             alert("Request failed: " + textStatus + " " + errorThrown);
@@ -75,7 +74,7 @@ class NytimesApi {
 
                 // append one published date
                 var $publishedDate = $("<h3/>")
-                .text("Published Date: " + data[i].published_date)
+                .text("Published Date: " + data[i].published_date.slice(0, 10))
                 .appendTo($article);
 
                 // append all shorts urls as links with this published date
@@ -112,7 +111,7 @@ class NytimesApi {
             var $article = $("<article/>")
             .attr("id", "tagCloud")
             .appendTo("#display");
-            $("<ul>").attr("id", "tagList").appendTo("#tagCloud");
+            $("<ul/>").attr("id", "tagList").appendTo("#tagCloud");
 
             // calculate tag frequency
             $.each(tags, function(idx, tag) {
@@ -124,14 +123,14 @@ class NytimesApi {
             
             $.each(uniqueTags, function(idx, tag) {
                 // create and append tag to the list
-                var $li = $("<li>")
+                var $li = $("<li/>")
                 .text(tag)
                 .appendTo("#tagList");
 
                 // give tags different font sizes depending on their frequency
                 $li.css("font-size",
                 (stats[tag] / 7 < 1) ? 
-                    stats[tag] / 7 + 1 + "em": (stats[tag] / 7 > 2) ? 
+                    stats[tag] / 7 +0.5 + "em": (stats[tag] / 7 > 2) ? 
                         "2em" : stats[tag] / 7 + "em");
             });
 
@@ -206,7 +205,7 @@ class NytimesApi {
                 // displayed
                 if (data[i].multimedia) {
                     var $link = $("<a/>")
-                    .attr("src", data[i].multimedia.url)
+                    .attr("href", data[i].short_url)
                     .appendTo($article);
 
                     var $media = $("<img/>")

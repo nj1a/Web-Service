@@ -114,7 +114,7 @@ http.createServer(function(req, res) {
                     idx = parseInt(req.url.slice(10));
 
                 // only send when the article index is valid
-                if (idx < resultsObj.length) {
+                if (idx < resultsObj.length && idx >= 0) {
                     var article = resultsObj[idx];
 
                     // add detailed info regarding the article
