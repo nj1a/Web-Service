@@ -230,6 +230,26 @@ class NytimesApi {
 
 // attach ajax functions to each button
 $(document).ready(function() {
+    $("#showForm").click(function() {
+        $("#modal").show();
+    });
+
+    $("#hideForm").click(function() {
+        $("#modal").hide();
+    });
+
+    $("#cancel").click(function() {
+        $("#modal").hide();
+    });
+
+    // close the modal when users click anywhere but the modal
+    $("body").click(function(event) {
+        if (event.target.id == "modal") {
+            $("#modal").hide();
+        }
+    });
+
+    // attach all api related onclick methods
     var nytimesApi = new NytimesApi();
 
     $("#textArticles").click(function() {
