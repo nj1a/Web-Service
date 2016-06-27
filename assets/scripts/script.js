@@ -1,6 +1,8 @@
+var loggedIn = 0;
 // this class implements ajax methods used to initiate HTTP requests to retrive
 // information from a node.js server
 class NytimesApi {
+    
     getTextArticles() {
         $.ajax({
             url: "/text-articles",
@@ -231,13 +233,55 @@ class NytimesApi {
         $.ajax({
             url: "/",
             type: "POST",
-            data: $("form").serialize(),
+            data: $("#modal form").serialize(),
         }).done(function(data, textStatus, jqXHR) {
             $("#u").val("");
             $("#p").val("");
+
+            if (data == "Signed up" || data == "Logged in") {
+                $("#modal").hide();
+                $("#showForm").hide();
+                $("#showFeedback").show();
+
+                $("#snackbar")
+                .text("You are now logged in")
+                .addClass("show");
+
+
+            } else {
+                $("#snackbar")
+                .text("Wrong password")
+                .addClass("show");
+            }
+
+            setTimeout(function() { 
+                $("#snackbar").removeClass("show"); 
+            }, 3000);
             
         });
         event.preventDefault();
+    }
+
+    submitFeedback() {
+        $.ajax({
+            url: "/feedback",
+            type: "POST",
+            data: $("#modal2 form").serialize(),
+        }).done(function(data, textStatus, jqXHR) {
+            $("textarea").val("");
+
+            $("#modal2").hide();
+
+            $("#snackbar")
+            .text("Thank you for your feedback")
+            .addClass("show");
+            
+            setTimeout(function() { 
+                $("#snackbar").removeClass("show"); 
+            }, 3000);
+            
+        });
+        event.preventDefault();        
     }
 }
 
@@ -260,14 +304,30 @@ $(document).ready(function() {
         if (event.target.id == "modal") {
             $("#modal").hide();
         }
+
+        if (event.target.id == "modal2") {
+            $("#modal2").hide();
+        }
     });
 
+    $("#showFeedback").click(function() {
+        $("#modal2").show();
+    });
+
+
+    $("#cancel2").click(function() {
+        $("#modal2").hide();
+    });
 
     // attach all api related onclick methods
     var nytimesApi = new NytimesApi();
 
-    $("form").submit(function(event){
+    $("#modal form").submit(function(){
         nytimesApi.login();
+    });
+
+    $("#modal2 form").submit(function(){
+        nytimesApi.submitFeedback();
     });
 
     $("#textArticles").click(function() {

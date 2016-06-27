@@ -52,13 +52,14 @@
                     </p>
                 </section>
 
+                <article id="snackbar"></article>
+
                 <!-- Button to open the modal login form -->
-                <button id="showForm">Login</button>
+                <button class="button4" id="showForm">Login</button>
 
                 <section id="modal">
                     <article id="hideForm">&times;</article>
 
-                    <!-- Modal Content -->
                     <form class="modal-content animate" method="post">
 
                         <article class="container">
@@ -68,16 +69,34 @@
                             <label>Password</label>
                             <input id="p" type="password" placeholder="Enter Password" name="pwd" required>
 
-                            <button type="submit">Sign up / Login</button>
+                            <button class="button1" type="submit">Sign up / Login</button>
                             <input type="checkbox" checked="checked"> Remember me
                         </article>
 
                         <article class="container">
-                            <button type="button" id="cancel">Cancel</button>
+                            <button class="button4" type="button" id="cancel">Cancel</button>
                         </article>
                     </form>
                 </section>
                 <!-- End The Modal -->
+
+                <!-- Button to open the modal feedback form -->
+                <button class="button4" id="showFeedback">Feedback</button>
+
+                <section id="modal2">
+                    <form class="modal-content animate" method="post">
+                        <article class="container">
+                            <label>What do you think we can improve upon?</label>
+                            <textarea></textarea>
+                            <button class="button1" type="submit">Send</button>
+                        </article>
+
+                        <article class="container">
+                            <button class="button4" type="button" id="cancel2">Cancel</button>
+                        </article>
+                    </form>
+                </section>  
+                <!-- End The Modal2 -->
                     
                 <section id="display">
                     <!-- all the response displayed here -->
