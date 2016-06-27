@@ -7,6 +7,8 @@ var http = require('http'),
 // use only the result section of the file
 var resultsObj = nytObj[0].results;
 
+var usernames = [], passwords = [];
+
 // initialize an http server to connect to clients
 http.createServer(function(req, res) {
     // handle errors on the request end
@@ -154,17 +156,31 @@ http.createServer(function(req, res) {
     } else if (req.method == 'POST') {
         var body = '';
 
-        req.on('data', function (data) {
+        req.on('data', function(data) {
             body += data;
-
-            if (body.length > 1e6)
+            if (body.length > 1e6) {
                 req.connection.destroy();
-        }).on('end', function () {
+            }
+                
+        }).on('end', function() {
             var post = qs.parse(body);
-            console.log(post.uname);
+            var idx = usernames.indexOf(post.uname);
+
+            if (idx != -1) {
+                if (passwords[idx] != post.pwd) { // check password
+                    res.end("Wrong password");
+                } else {
+                    res.end("Logged in");
+                }
+            } else { // username does not exist
+                usernames.push(post.uname);
+                passwords.push(post.pwd);
+                res.end("Signed up");
+            }
+
         });
 
-        res.end("Hello");
+        
     }
 
 }).listen(8080); // listen on port 8080

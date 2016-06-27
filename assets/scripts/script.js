@@ -226,6 +226,19 @@ class NytimesApi {
             alert("Request failed: " + textStatus + " " + errorThrown);
         });
     }
+
+    login() {
+        $.ajax({
+            url: "/",
+            type: "POST",
+            data: $("form").serialize(),
+        }).done(function(data, textStatus, jqXHR) {
+            $("#u").val("");
+            $("#p").val("");
+            
+        });
+        event.preventDefault();
+    }
 }
 
 // attach ajax functions to each button
@@ -249,8 +262,13 @@ $(document).ready(function() {
         }
     });
 
+
     // attach all api related onclick methods
     var nytimesApi = new NytimesApi();
+
+    $("form").submit(function(event){
+        nytimesApi.login();
+    });
 
     $("#textArticles").click(function() {
         $("#display").empty();
