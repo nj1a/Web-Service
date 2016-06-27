@@ -235,9 +235,11 @@ class NytimesApi {
             type: "POST",
             data: $("#modal form").serialize(),
         }).done(function(data, textStatus, jqXHR) {
+            // remove content typed
             $("#u").val("");
             $("#p").val("");
 
+            // check if signed up or logged in
             if (data == "Signed up" || data == "Logged in") {
                 $("#modal").hide();
                 $("#showForm").hide();
@@ -247,13 +249,13 @@ class NytimesApi {
                 .text("You are now logged in")
                 .addClass("show");
 
-
             } else {
                 $("#snackbar")
                 .text("Wrong password")
                 .addClass("show");
             }
 
+            // remove the snakcbar
             setTimeout(function() { 
                 $("#snackbar").removeClass("show"); 
             }, 3000);
@@ -272,6 +274,7 @@ class NytimesApi {
 
             $("#modal2").hide();
 
+            // show snackbar disappear after 3 seconds
             $("#snackbar")
             .text("Thank you for your feedback")
             .addClass("show");
