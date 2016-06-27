@@ -1,0 +1,15 @@
+1. Users can now sign up if the username provided is not recorded, or
+log in otherwise. Users will be given clear indication whether it is 
+successful.
+
+2. Users can submit feedback after they are logged in.
+
+3. The above two features will be displayed inside a modal box.
+
+4. The page is responsive in general.
+
+5. Users will be given notice if they entered an incorrect article index.
+
+6. Extra care has been taken to make the page consistent and usable.
+
+7. Code is organized in a manner that is easy to read.

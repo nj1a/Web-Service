@@ -22,23 +22,29 @@
             <main>
                 <section id="control">
                     <!-- instructions and buttons for users -->
-                    <h2>There are six buttons below, each representing an
-                        ajax call to the server to retrive certain information.</h2>
+                    <h2>There are seven buttons below, each of the first six representing an
+                        ajax call to the server to retrive certain information.
+                        The last button will allow you to sign up or log in, given
+                        you ifnroamtion in our system. After you are logged in, 
+                        you will be able to submit feedback about this webpage. 
+                        This approach is used to reduce spam.</h2>
 
                     <button class="button1" id="textArticles">Text Articles</button>
-                    <p>is used to retrive all articles in basic text format.
+                    <p>used to allow users to sign up (if the username does not exist) or log in.
+                        Usernames and passwords are not encrypted and are simply stored in arrays.
                     </p><br>
 
                     <button class="button2" id="authors">All Authors</button>
-                    <p>is used to retrive a list of all known authors.</p><br>
+                    <p>used retrieve a list of authors. Authors for the same article will be displayed
+                        in a single line.</p><br>
 
                     <button class="button3" id="urls">All URLs</button>
-                    <p>is used to retrive a list of urls grouped by published dates.
+                    <p>used to retrieve a list of urls grouped by published dates. Dates are not sorted.
                     </p><br>
 
                     <button class="button1" id="tags">All Tags</button>
-                    <p>is used to retrive all the tags, displaed
-                        in the form of tag cloud.
+                    <p>used to retrieve all the tags, displayed in the form of tag cloud, i.e. tags
+                        with higher frequency will show a larger font size.
                     </p><br>
 
                     <button class="button2" id="article">Article</button>
@@ -47,8 +53,8 @@
                     <input type="number" id="index" value="0"><br>
 
                     <button class="button3" id="mediaArticles">Media Articles</button>
-                    <p>is used to retrive all articles in the form of 
-                        hyperlinked image.
+                    <p>used to retrieve all articles in the form of hyperlinked images. Images are linked
+                        to the original articles.
                     </p>
                 </section>
 
