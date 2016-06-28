@@ -4,8 +4,8 @@ cdf: g5natjia
 
 email: nathan.jia@mail.utoronto.ca
 
-Seven RESTful APIs are available for use. The first six can be accessed using HTTP GET requests, while the last one requires
-an HTTP POST request.
+Eight RESTful APIs are available for use. The first six can be accessed using HTTP GET requests, while the last two require
+HTTP POST requests.
 
 ## GET:
 
