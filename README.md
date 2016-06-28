@@ -1,43 +1,73 @@
 # Web-Service
 
-CDF: g5natjia
+cdf: g5natjia
 
 email: nathan.jia@mail.utoronto.ca
 
-All the HTTP requests are organized under a class NytimesApi.
+Seven RESTful APIs are available for use. The first six can be accessed using HTTP GET requests, while the last one requires
+an HTTP POST request.
 
-Two types of requests are used.
+## GET:
 
-POST:
+1. 
+  * url: /text-articles;
+  * return: a list of articles;
+  * fields: title, abstract, published_date, and short_url.
 
-1. nytimesApi.login();
-It is used to allow users to sign up (if the username does not exist) or log in.
-Usernames and passwords are not encrypted and are simply stored in arrays.
+2. 
+  * url; /authors; 
+  * return: a list of authors;
+  * field: author;
+  * note: One author field may contain more than one authors.
 
-2. nytimesApi.submitFeedback();
-It is used to allow users to submit feedback regarding this webpage. Information 
-will not be stored.
+3. 
+  * url: /urls;
+  * return: a list of urls grouped by published dates;
+  * fields: published_date, short_urls;
+  * note: published dates are not sorted.
 
-GET:
+4. 
+  * url: /tags;
+  * return: a list of all the tags;
+  * field: des_facet;
+  * note: some tags may appear more than once.
 
-1. nytimesApi.getTextArticles();
-This is used to get all the articles in basic text format, including published dates, titles, abstracts, and short urls.
+5. 
+  * url: /article/ + index;
+  * return: an article specified by index;
+  * fields: section, subsection, title, abstract, byline, published_date, des_facet;
+  * note: 
+    * index should be a positive interger;
+    * null is returned if index is not valid;
+    * returned value is enclosed in index 0 of an array, so use [0] to access it
 
-2. nytimesApi.getAuthors();
-This is used retrieve a list of authors. Authors for the same article will be displayed
-in a single line.
+6. 
+  * url: /media-articles;
+  * if multimedia(images) exists:
+    * return: a list of articles with images and url linking to the original article;
+    * fields: multimedia, short_url;
+      * subfields of multimedia: url, caption, width, height;
+    * note: multimedia may contain more than one images;
+  * else:
+    * return: a list of articles with title and url linking to the original article;
+    * fields: title, short_url.
 
-3. nytimesApi.getURLs();
-This is used to retrieve a list of urls grouped by published dates. Dates are not sorted.
+## POST:
 
-4. nytimesApi.getTags();
-This is used to retrieve all the tags, displayed in the form of tag cloud, i.e. tags
-with higher frequency will show a larger font size.
+1. 
+  * url: /;
+  * funcion: allow users to sign up (if the username does not exist) or log in;
+  * return: 
+    * "Signed up";
+    * "Logged in";
+    * "Wrong password";
+  * note: 
+    * highly recommend using a form to transfer the information;
+    * when setting up the form, the username should have name uname, and the password should have pwd as name;
+    * passwords are hashed at server-side using a hash function similar to hashCode() in Java.
 
-5. nytimesApi.getArticle(idx);
-This is used to retrieve detailed information about a specific article, given article
-index.
-
-6. nytimesApi.getMediaArticles();
-This is used to retrieve all articles in the form of hyperlinked images. Images are linked
-to the original articles.
+2. 
+  * url: /feedback;
+  * function: allow users to submit feedback regarding this webpage, which will not associated with this user;
+  * return: none;
+  * note: only logged in users can submit feedback; this is to prevent spam.
