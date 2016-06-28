@@ -20,49 +20,18 @@
             </header> <!-- end header -->
             
             <main>
-                <section id="control">
-                    <!-- instructions and buttons for users -->
-                    <h2>There are seven buttons below, each of the first six representing an
-                        ajax call to the server to retrive certain information.
-                        The last button will allow you to sign up or log in, given
-                        you ifnroamtion in our system. After you are logged in, 
-                        you will be able to submit feedback about this webpage. 
-                        This approach is used to reduce spam.</h2>
-
-                    <button class="button1" id="textArticles">Text Articles</button>
-                    <p>used to allow users to sign up (if the username does not exist) or log in.
-                        Usernames and passwords are not encrypted and are simply stored in arrays.
-                    </p><br>
-
-                    <button class="button2" id="authors">All Authors</button>
-                    <p>used retrieve a list of authors. Authors for the same article will be displayed
-                        in a single line.</p><br>
-
-                    <button class="button3" id="urls">All URLs</button>
-                    <p>used to retrieve a list of urls grouped by published dates. Dates are not sorted.
-                    </p><br>
-
-                    <button class="button1" id="tags">All Tags</button>
-                    <p>used to retrieve all the tags, displayed in the form of tag cloud, i.e. tags
-                        with higher frequency will show a larger font size.
-                    </p><br>
-
-                    <button class="button2" id="article">Article</button>
-                    <p>is used to retrive detailed information about article #
-                    </p>
-                    <input type="number" id="index" value="0"><br>
-
-                    <button class="button3" id="mediaArticles">Media Articles</button>
-                    <p>used to retrieve all articles in the form of hyperlinked images. Images are linked
-                        to the original articles.
-                    </p>
-                </section>
-
-                <article id="snackbar"></article>
+                <h2>
+                    Eight RESTful APIs are available for use. The first six 
+                    can be accessed using HTTP GET requests, while the last 
+                    two require HTTP POST requests. Click Show Info to see the 
+                    details.
+                </h2>
 
                 <!-- Button to open the modal login form -->
                 <button class="button4" id="login">Log in</button>
                 <button class="button4" id="logoff">Log off</button>
+                <!-- Button to open the modal feedback form -->
+                <button class="button4" id="showFeedback">Feedback</button>
 
                 <section id="modal">
                     <article id="hideForm">&times;</article>
@@ -87,9 +56,6 @@
                 </section>
                 <!-- End The Modal -->
 
-                <!-- Button to open the modal feedback form -->
-                <button class="button4" id="showFeedback">Feedback</button>
-
                 <section id="modal2">
                     <form class="modal-content animate" method="post">
                         <article class="container">
@@ -104,7 +70,131 @@
                     </form>
                 </section>  
                 <!-- End The Modal2 -->
-                    
+
+                <button id="showInfo" class="button4">Show Info</button>
+                <button id="hideInfo" class="button4">Hide Info</button>
+                <section id="info">
+
+                    <h2>GET REQUESTS</h2>
+                    <ol>
+                        <li>url: /text-articles;
+                            <ul>
+                                <li>return: a list of articles;</li>
+                                <li>fields: title, abstract, published_date, and short_url.</li>
+                            </ul>
+                        </li>
+                        <li>url: /authors;
+                            <ul>
+                                <li>return: a list of authors;</li>
+                                <li>field: author;</li>
+                                <li>note: one author field may contain more than one authors.</li>
+                            </ul>
+                        </li>
+                        <li>url: /urls;
+                            <ul>
+                                <li>return: a list of urls grouped by published dates;</li>
+                                <li>fields: published_date, short_urls;</li>
+                                <li>note: published dates are not sorted.</li>
+                            </ul>
+                        </li>
+                        <li>url: /tags;
+                            <ul>
+                                <li>return: a list of all the tags;</li>
+                                <li>field: des_facet;</li>
+                                <li>note: some tags may appear more than once.</li>
+                            </ul>
+                        </li>
+                        <li>url: /article/ + index;
+                            <ul>
+                                <li>return: an article specified by index;</li>
+                                <li>fields: section, subsection, title, abstract, byline, published_date, des_facet;</li>
+                                <li>note: 
+                                    <ul>
+                                        <li>index should be a positive interger;</li>
+                                        <li>null is returned if index is not valid;</li>
+                                        <li>returned value is enclosed in index 0 of an array, so use [0] to access it.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>url: /media-articles;
+                            <ul>
+                                <li>if multimedia(images) exists:
+                                    <ul>
+                                        <li>return: a list of articles with images and url linking to the original article;</li>
+                                        <li>fields: multimedia, short_url;</li>
+                                        <li>subfields of multimedia: url, caption, width, height;</li>
+                                        <li>note: multimedia may contain more than one images;</li>
+                                    </ul>
+                                </li>
+                                <li>else:
+                                    <ul>
+                                        <li>return: a list of articles with title and url linking to the original article;</li>
+                                        <li>fields: title, short_url.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+
+                    <h2>POST REQUEST</h2>
+                    <ol>
+                        <li>url: /;
+                            <ul>
+                                <li>funcion: allow users to sign up (if the username does not exist) or log in;</li>
+                                <li>fields: section, subsection, title, abstract, byline, published_date, des_facet;</li>
+                                <li>return:
+                                    <ul>
+                                        <li>"Signed up";</li>
+                                        <li>"Logged in";</li>
+                                        <li>"Wrong password";</li>
+                                    </ul>
+                                </li>
+                                <li>note: 
+                                    <ul>
+                                        <li>highly recommend using a form to transfer the information;</li>
+                                        <li>when setting up the form, the username should have name uname, and the password should have pwd as name;</li>
+                                        <li>passwords are hashed at server-side using a hash function similar to hashCode() in Java.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>url: /feedback;
+                            <ul>
+                                <li>function: allow users to submit feedback regarding this webpage, which will not associated with this user;</li>
+                                <li>return: none;</li>
+                                <li>note: only logged in users can submit feedback; this is to prevent spam</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </section>
+
+                <section id="control">
+                    <!-- instructions and buttons for users -->
+                    <h2>There are seven buttons below, each of the first six representing an
+                        ajax call to the server to retrive certain information.
+                        The last button will allow you to sign up or log in. After you are logged in, 
+                        you will be able to submit feedback about this webpage. 
+                    </h2><br>
+
+                    <button class="button1" id="textArticles">Text Articles</button><br>
+
+                    <button class="button2" id="authors">All Authors</button><br>
+
+                    <button class="button3" id="urls">All URLs</button><br>
+
+                    <button class="button1" id="tags">All Tags</button><br>
+
+                    <button class="button2" id="article">Article</button>
+                    <p>about article #</p>
+                    <input type="number" id="index" value="0"><br>
+
+                    <button class="button3" id="mediaArticles">Media Articles</button>
+                </section>
+
+                <article id="snackbar"></article>
+
                 <section id="display">
                     <!-- all the response displayed here -->
                 </section>
@@ -113,6 +203,7 @@
             
             <footer>
                 <h3>Copyright 2016.</h3>
+                <a href="http://werxltd.com/wp/2010/05/13/javascript-implementation-of-javas-string-hashcode-method/">hash function source</a>
             </footer> <!-- end footer -->
         </div>
     </body>

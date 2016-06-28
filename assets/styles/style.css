@@ -28,13 +28,16 @@ h3 {
 
 li {
     font-size: 0.7rem;
-    list-style: none;
-    padding: 0.2rem;
+    padding: 0.2rem 0.8rem;
 }
 
 img {
     max-width: 100%;
     height: auto;
+}
+
+section {
+    margin: 50px 0;
 }
 
 textarea {
@@ -161,11 +164,16 @@ main {
     text-align: center;
 }
 
+#display li {
+    list-style: none;
+    padding: 0.2rem;
+}
+
 /* start of control styles */
 
 #control input {
     color: #000;
-    width: 40px;
+    width: 50px;
     border: none;
     border-bottom: 2px solid #41c0d3;
     border-radius: 5px;
@@ -183,11 +191,17 @@ footer {
     bottom: 0;
     width: 100%;
     background: #303F9F;
-    height: 50px;
+    height: 100px;
 }
 
 footer h3 {
     padding-top: 5px;
+    text-align: center;
+    color: white;
+}
+
+footer a {
+    font-size: 0.7rem;
     text-align: center;
     color: white;
 }
@@ -224,6 +238,20 @@ footer h3 {
     margin: auto;
 }
 
+/* start of info styles */
+
+#hideInfo {
+    display: none;
+}
+
+#info {
+    display: none;
+}
+
+#info p {
+    font-size: 0.7rem;
+}
+ 
 /* start of modal styles */
 #modal, #modal2 {
     display: none; 

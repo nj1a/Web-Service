@@ -35,6 +35,10 @@ class NytimesApi {
             $("#snackbar")
             .text("Request failed: " + textStatus + " " + errorThrown)
             .addClass("show");
+
+            setTimeout(function() { 
+                $("#snackbar").removeClass("show"); 
+            }, 3000);
         });
     }
 
@@ -65,6 +69,10 @@ class NytimesApi {
             $("#snackbar")
             .text("Request failed: " + textStatus + " " + errorThrown)
             .addClass("show");
+
+            setTimeout(function() { 
+                $("#snackbar").removeClass("show"); 
+            }, 3000);
         });
     }
 
@@ -97,6 +105,10 @@ class NytimesApi {
             $("#snackbar")
             .text("Request failed: " + textStatus + " " + errorThrown)
             .addClass("show");
+
+            setTimeout(function() { 
+                $("#snackbar").removeClass("show"); 
+            }, 3000);
         });
     }
 
@@ -146,6 +158,10 @@ class NytimesApi {
             $("#snackbar")
             .text("Request failed: " + textStatus + " " + errorThrown)
             .addClass("show");
+
+            setTimeout(function() { 
+                $("#snackbar").removeClass("show"); 
+            }, 3000);
         });
     }
 
@@ -194,12 +210,20 @@ class NytimesApi {
                 $("#snackbar")
                 .text("Not valid index. Try another number!")
                 .addClass("show");
+
+                setTimeout(function() { 
+                    $("#snackbar").removeClass("show"); 
+                }, 3000);
             }
 
         }).fail(function(jqXHR, textStatus, errorThrown) {
             $("#snackbar")
             .text("Request failed: " + textStatus + " " + errorThrown)
             .addClass("show");
+
+            setTimeout(function() { 
+                $("#snackbar").removeClass("show"); 
+            }, 3000);
         });
     }
 
@@ -240,6 +264,10 @@ class NytimesApi {
             $("#snackbar")
             .text("Request failed: " + textStatus + " " + errorThrown)
             .addClass("show");
+
+            setTimeout(function() { 
+                $("#snackbar").removeClass("show"); 
+            }, 3000);
         });
     }
 
@@ -306,6 +334,18 @@ class NytimesApi {
 
 // attach ajax functions to each button
 $(document).ready(function() {
+    $("#showInfo").click(function() {
+        $("#info").show();
+        $("#showInfo").hide();
+        $("#hideInfo").show();
+    });
+
+    $("#hideInfo").click(function() {
+        $("#info").hide();
+        $("#showInfo").show();
+        $("#hideInfo").hide();
+    });
+
     $("#login").click(function() {
         $("#modal").show();
     });
