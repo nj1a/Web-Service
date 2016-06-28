@@ -7,7 +7,22 @@ var http = require('http'),
 // use only the result section of the file
 var resultsObj = nytObj[0].results;
 
-var usernames = [], passwords = [];
+var usernames = [], passwords = [], feedbacks = [];
+
+// source: http://werxltd.com/wp/2010/05/13/javascript-implementation-of-javas-string-hashcode-method/
+String.prototype.hashCode = function() {
+	var hash = 0;
+	if (this.length == 0) {
+        return hash;
+    }
+
+	for (i = 0; i < this.length; i++) {
+		char = this.charCodeAt(i);
+		hash = ((hash << 5) - hash) + char;
+		hash = hash & hash; // Convert to 32bit integer
+	}
+	return hash;
+}
 
 // initialize an http server to connect to clients
 http.createServer(function(req, res) {
@@ -154,31 +169,49 @@ http.createServer(function(req, res) {
             }
         }
     } else if (req.method == 'POST') {
-        var body = '';
+        if (req.url == '/') {
+            var body = '';
 
-        req.on('data', function(data) {
-            body += data;
-            if (body.length > 1e6) {
-                req.connection.destroy();
-            }
-                
-        }).on('end', function() {
-            var post = qs.parse(body);
-            var idx = usernames.indexOf(post.uname);
-
-            if (idx != -1) {
-                if (passwords[idx] != post.pwd) { // check password
-                    res.end("Wrong password");
-                } else {
-                    res.end("Logged in");
+            req.on('data', function(data) {
+                body += data;
+                if (body.length > 1e6) {
+                    req.connection.destroy();
                 }
-            } else { // username does not exist
-                usernames.push(post.uname);
-                passwords.push(post.pwd);
-                res.end("Signed up");
-            }
+                    
+            }).on('end', function() {
+                var post = qs.parse(body);
+                var idx = usernames.indexOf(post.uname);
+                var hashedPassword = post.pwd.hashCode();
 
-        });
+                if (idx != -1) {
+                    if (passwords[idx] != hashedPassword) { // check password
+                        res.end("Wrong password");
+                    } else {
+                        res.end("Logged in");
+                    }
+                } else { // username does not exist
+                    usernames.push(post.uname);
+                    passwords.push(hashedPassword);
+                    res.end("Signed up");
+                }
+
+            });
+        } else if (req.url == '/feedback') {
+            var body = '';
+
+            req.on('data', function(data) {
+                body += data;
+                if (body.length > 1e6) {
+                    req.connection.destroy();
+                }
+                    
+            }).on('end', function() {
+                var post = qs.parse(body);
+                feedbacks.push(post.fb);
+                res.end();
+            });
+        }
+
     }
 
 }).listen(8080); // listen on port 8080

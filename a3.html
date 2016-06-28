@@ -61,7 +61,8 @@
                 <article id="snackbar"></article>
 
                 <!-- Button to open the modal login form -->
-                <button class="button4" id="showForm">Login</button>
+                <button class="button4" id="login">Log in</button>
+                <button class="button4" id="logoff">Log off</button>
 
                 <section id="modal">
                     <article id="hideForm">&times;</article>
@@ -70,7 +71,7 @@
 
                         <article class="container">
                             <label>Username</label>
-                            <input id="u" type="text" placeholder="Enter Username" name="uname" required>
+                            <input id="u" type="text" placeholder="Enter Username" name="uname" required autocomplete=default>
 
                             <label>Password</label>
                             <input id="p" type="password" placeholder="Enter Password" name="pwd" required>
@@ -93,7 +94,7 @@
                     <form class="modal-content animate" method="post">
                         <article class="container">
                             <label>What do you think we can improve upon?</label>
-                            <textarea></textarea>
+                            <textarea name="fb" rows="6" cols="50" required></textarea>
                             <button class="button1" type="submit">Send</button>
                         </article>
 

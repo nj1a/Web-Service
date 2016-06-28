@@ -1,4 +1,4 @@
-var loggedIn = 0;
+var logged = 0;
 // this class implements ajax methods used to initiate HTTP requests to retrive
 // information from a node.js server
 class NytimesApi {
@@ -32,7 +32,9 @@ class NytimesApi {
             }
 
         }).fail(function(jqXHR, textStatus, errorThrown) {
-            alert("Request failed: " + textStatus + " " + errorThrown);
+            $("#snackbar")
+            .text("Request failed: " + textStatus + " " + errorThrown)
+            .addClass("show");
         });
     }
 
@@ -60,7 +62,9 @@ class NytimesApi {
             }
 
         }).fail(function(jqXHR, textStatus, errorThrown) {
-            alert("Request failed: " + textStatus + " " + errorThrown);
+            $("#snackbar")
+            .text("Request failed: " + textStatus + " " + errorThrown)
+            .addClass("show");
         });
     }
 
@@ -90,7 +94,9 @@ class NytimesApi {
             }
 
         }).fail(function(jqXHR, textStatus, errorThrown) {
-            alert("Request failed: " + textStatus + " " + errorThrown);
+            $("#snackbar")
+            .text("Request failed: " + textStatus + " " + errorThrown)
+            .addClass("show");
         });
     }
 
@@ -137,7 +143,9 @@ class NytimesApi {
             });
 
         }).fail(function(jqXHR, textStatus, errorThrown) {
-            alert("Request failed: " + textStatus + " " + errorThrown);
+            $("#snackbar")
+            .text("Request failed: " + textStatus + " " + errorThrown)
+            .addClass("show");
         });
     }
 
@@ -183,11 +191,15 @@ class NytimesApi {
                 .appendTo($article);
                 
             } else {
-                alert("Not valid index. Try another number!");
+                $("#snackbar")
+                .text("Not valid index. Try another number!")
+                .addClass("show");
             }
 
         }).fail(function(jqXHR, textStatus, errorThrown) {
-            alert("Request failed: " + textStatus + " " + errorThrown);
+            $("#snackbar")
+            .text("Request failed: " + textStatus + " " + errorThrown)
+            .addClass("show");
         });
     }
 
@@ -225,7 +237,9 @@ class NytimesApi {
             }
             
         }).fail(function(jqXHR, textStatus, errorThrown) {
-            alert("Request failed: " + textStatus + " " + errorThrown);
+            $("#snackbar")
+            .text("Request failed: " + textStatus + " " + errorThrown)
+            .addClass("show");
         });
     }
 
@@ -242,7 +256,9 @@ class NytimesApi {
             // check if signed up or logged in
             if (data == "Signed up" || data == "Logged in") {
                 $("#modal").hide();
-                $("#showForm").hide();
+                $("#login").hide();
+                $("#logoff").show();
+                logged = 1;
                 $("#showFeedback").show();
 
                 $("#snackbar")
@@ -290,8 +306,20 @@ class NytimesApi {
 
 // attach ajax functions to each button
 $(document).ready(function() {
-    $("#showForm").click(function() {
+    $("#login").click(function() {
         $("#modal").show();
+    });
+
+    $("#logoff").click(function() {
+        $("#login").show();
+        $("#logoff").hide();
+        $("#snackbar")
+        .text("You are now logged off")
+        .addClass("show");
+
+        setTimeout(function() { 
+            $("#snackbar").removeClass("show"); 
+        }, 3000);
     });
 
     $("#hideForm").click(function() {

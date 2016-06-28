@@ -1,10 +1,12 @@
 1. Users can now sign up if the username provided is not recorded, or
-log in otherwise. Users will be given clear indication whether it is 
-successful.
+log in otherwise. Both username and passwords are requried, and autocomplete is
+by default on for the username.
 
 2. Users can submit feedback after they are logged in.
 
 3. The above two features will be displayed inside a modal box.
+
+4. All the alert info is displayed in a non-disruptive manner, using snackbar.
 
 4. The page is responsive in general.
 
