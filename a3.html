@@ -75,6 +75,10 @@
                 <button id="hideInfo" class="button4">Hide Info</button>
                 <section id="info">
 
+                    <p>Note: the format of published_date would be 
+                        YYYY-MM-DDTHH:MM:SS-MM:SS, where the "T" in the middle 
+                        stands for time, and minutes and seconds are a range.
+                    </p><br>
                     <h2>GET REQUESTS</h2>
                     <ol>
                         <li>url: /text-articles;
@@ -119,7 +123,7 @@
                         </li>
                         <li>url: /media-articles;
                             <ul>
-                                <li>if multimedia(images) exists:
+                                <li>if multimedia(images) exist:
                                     <ul>
                                         <li>return: a list of articles with images and url linking to the original article;</li>
                                         <li>fields: multimedia, short_url;</li>
