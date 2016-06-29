@@ -7,6 +7,8 @@ email: nathan.jia@mail.utoronto.ca
 Eight RESTful APIs are available for use. The first six can be accessed using HTTP GET requests, while the last two require
 HTTP POST requests.
 
+Note: the format of published_date would be YYYY-MM-DDTHH:MM:SS-MM:SS, where the "T" in the middle stands for time, and minutes and seconds are a range.
+
 ## GET:
 
 1. 
@@ -18,7 +20,7 @@ HTTP POST requests.
   * url; /authors; 
   * return: a list of authors;
   * field: author;
-  * note: One author field may contain more than one authors.
+  * note: One author field may contain more than one authors, separated by " And ".
 
 3. 
   * url: /urls;
@@ -43,7 +45,7 @@ HTTP POST requests.
 
 6. 
   * url: /media-articles;
-  * if multimedia(images) exists:
+  * if multimedia(images) exist:
     * return: a list of articles with images and url linking to the original article;
     * fields: multimedia, short_url;
       * subfields of multimedia: url, caption, width, height;
